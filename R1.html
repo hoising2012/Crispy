@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remedy mobile</title>
+<style type="text/css">
+.hidden { display: none; }
+tr.change { background-color: black;
+			color : white
+		  }		   
+</style>
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+</head>
+    <body>
+	<div data-role="navbar" data-iconpos="left">
+       <div data-role="header" data-theme="b" >
+	    
+	<a href="#" id="abc" class="ui-btn ui-btn-inline ui-corner-all ui-btn-left" data-icon="grid" >Summary</a>
+	<h1>Fetch up 1.0</h1>
+	<a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-btn-right" data-icon="gear" >Option</a>
+	</div>
+	</div>
+	
+	<div id="main">
+	  <div class="container" id="pageone" class="active">
+			<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+     <thead>
+       <tr>
+         <th data-priority="2">Rank</th>
+         <th>Movie Title</th>
+         <th data-priority="3">Year</th>
+         <th data-priority="1"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+         <th data-priority="5">Reviews</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <th>1</th>
+         <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+         <td>1941</td>
+         <td>100%</td>
+         <td>74</td>
+       </tr>
+       <tr >
+         <th>2</th>
+         <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+         <td>1942</td>
+         <td>97%</td>
+         <td>64</td>
+       </tr>
+       <tr>
+         <th>3</th>
+         <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+         <td>1972</td>
+         <td>97%</td>
+         <td>87</td>
+       </tr>
+       <tr >
+         <th>4</th>
+         <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+         <td>1939</td>
+         <td>96%</td>
+         <td>87</td>
+       </tr>
+       <tr>
+         <th>5</th>
+         <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+         <td>1962</td>
+         <td>94%</td>
+         <td>87</td>
+       </tr>
+       <tr >
+         <th>6</th>
+         <td><a href="http://en.wikipedia.org/wiki/Dr._Strangelove" data-rel="external">Dr. Strangelove Or How I Learned to Stop Worrying and Love the Bomb</a></td>
+         <td>1964</td>
+         <td>92%</td>
+         <td>74</td>
+       </tr>
+       <tr>
+         <th>7</th>
+         <td><a href="http://en.wikipedia.org/wiki/The_Graduate" data-rel="external">The Graduate</a></td>
+         <td>1967</td>
+         <td>91%</td>
+         <td>122</td>
+       </tr>
+       <tr >
+         <th>8</th>
+         <td><a href="http://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)" data-rel="external">The Wizard of Oz</a></td>
+         <td>1939</td>
+         <td>90%</td>
+         <td>72</td>
+       </tr>
+       <tr>
+         <th>9</th>
+         <td><a href="http://en.wikipedia.org/wiki/Singin%27_in_the_Rain" data-rel="external">Singin' in the Rain</a></td>
+         <td>1952</td>
+         <td>89%</td>
+         <td>85</td>
+       </tr>
+       <tr >
+         <th>10</th>
+         <td class="title"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
+         <td>2010</td>
+         <td>84%</td>
+         <td>78</td>
+       </tr>
+     </tbody>
+   </table>
+		</div>
+	
+	<div class="container" id="pagetwo" >
+	
+	<form action="sendemail.php" method="post" enctype="multipart/form-data">
+	<label id="demo"></label>
+	<label for="textarea">Incident detail:</label>
+	<textarea cols="40" rows="8" name="detail" id="detail"></textarea>
+	<label for="date">Date:</label>
+	<input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>">
+	<label for="select-choice-mini" class="select">Mini select, inline</label>
+	<select name="taskOption" id="taskOption" data-mini="true" data-inline="true">
+    <option value="standard">Standard: 7 day</option>
+    <option value="rush">Rush: 3 days</option>
+    <option value="express">Express: next day</option>
+    <option value="overnight">Overnight</option>
+	</select>
+	<input type="submit" id="submit" value="submit">
+	</form>
+	</div>
+	
+	<div class="container" id="pagethree" >
+	<h1 id="upload">Upload File</h1>
+	<label for="file">File:</label>
+	<input type="file" id="multiupload" name="uploadFiledd[]" multiple >
+	<button type="button" id="upcvr" class="btn btn-primary">Start Upload</button>
+	</div>
+	
+	<div class="container" id="pagefour" >
+	<h1>messager</h1>
+	</div>
+	
+	
+	
+</div><!--header-->
+
+<div data-role="navbar" data-grid="c" id="on" data-theme="b">
+ 
+        <ul>
+		<li><a href="#" id="one" class="ui-btn-active">One</a></li>
+		<li><a href="#" id="two" onclick="myFunction()">Two</a></li>
+		<li><a href="#" id="three">three</a></li>
+		<li><a href="#" id="four">Four</a></li>
+ 		</ul>
+	
+</div><!-- /navbar -->
+<script>
+	$("#on").hide("normal");
+	$("#pageone").hide("normal");
+	$("#pagetwo").hide("normal");
+	$("#pagethree").hide("normal");
+	$("#pagefour").hide('normal');
+    $("#abc").click(function () {
+    $("#on").toggle("slow");
+    });
+	
+   $("#one").click(function () {  
+		  $("#pagetwo").hide('fast');
+		   $("#pagethree").hide('fast');
+			$("#pagefour").hide('fast');
+         $("#pageone").show('fast');
+   }); 
+   
+    $("#two").click(function () {  
+	  $("#pageone").hide('fast');
+	   $("#pagethree").hide('fast');
+		$("#pagefour").hide('fast');
+         $("#pagetwo").show('fast');
+   });
+   
+   $("#three").click(function () {  
+	  $("#pageone").hide('fast');
+         $("#pagetwo").hide('fast');
+			$("#pagefour").hide('fast');
+		  $("#pagethree").show('fast');
+   });
+  
+	$("#four").click(function () {  
+	  $("#pageone").hide('fast');
+         $("#pagetwo").hide('fast');
+			$("#pagethree").hide('fast');
+			$("#pagefour").show('fast');
+		  
+   });
+	$(document).ready(function()
+{
+  $("tr:even").css({
+    "background-color":"#fffaf0",
+    "color":"#000"});
+});
+
+function myFunction() {
+  var x = document.getElementById("demo")
+  var h = "Incident ID :"
+      h = h + Math.floor((Math.random() * 100000000) + 1) 
+  var txt = "<h1>" + h + "</h1>"
+  x.innerHTML = txt;
+}
+
+function uploadajax(ttl,cl){
+
+    var fileList = $('#multiupload').prop("files");
+    $('#prog'+cl).removeClass('loading-prep').addClass('upload-image');
+
+    var form_data =  "";
+
+    form_data = new FormData();
+    form_data.append("upload_image", fileList[cl]);
+
+
+    var request = $.ajax({
+              url: "upload.php",
+              cache: false,
+              contentType: false,
+              processData: false,
+              async: true,
+              data: form_data,
+              type: 'POST', 
+              xhr: function() {  
+                  var xhr = $.ajaxSettings.xhr();
+                  if(xhr.upload){ 
+                  xhr.upload.addEventListener('progress', function(event){
+                      var percent = 0;
+                      if (event.lengthComputable) {
+                          percent = Math.ceil(event.loaded / event.total * 100);
+                      }
+                      $('#prog'+cl).text(percent+'%') 
+                   }, false);
+                 }
+                 return xhr;
+              },
+              success: function (res, status) {
+                  if (status == 'success') {
+                      percent = 0;
+                      $('#prog' + cl).text('');
+                      $('#prog' + cl).text('--Success: ');
+                      if (cl < ttl) {
+                          uploadajax(ttl, cl + 1);
+                      } else {
+                          alert('Done');
+                      }
+                  }
+              },
+              fail: function (res) {
+                  alert('Failed');
+              }    
+          })
+    }
+
+    $('#upcvr').click(function(){
+        var fileList = $('#multiupload').prop("files");
+        $('#uploadsts').html('');
+        var i;
+        for ( i = 0; i < fileList.length; i++) {
+            $('#uploadsts').append('<p class="upload-page">'+fileList[i].name+'<span class="loading-prep" id="prog'+i+'"></span></p>');
+            if(i == fileList.length-1){
+                uploadajax(fileList.length-1,0);
+            }
+         }
+    });
+	
+	$('#submit').click(function() {
+	var serializedData = $form.serialize();
+    $.ajax({
+        url: 'sendemail.php',
+        type: 'POST', // GET is default
+        data: serializedData,
+            // in PHP, use $_POST['yourData']
+        
+        success: function(msg) {
+            alert('Data returned from PHP: ' + msg);
+        },
+        error: function(msg) {
+            alert('AJAX request failed!' + msg);
+        }
+    });
+});
+    </script>
+    </body>
+</html>
+
+
