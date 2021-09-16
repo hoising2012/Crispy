@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Sum_1="";
+$Sum_2="";
+$A=43;
+$B=47;
+echo "<table>";
+echo "<tr>";
+echo "<th>m</th>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "</tr>";
+for($k=1; $k<=10; $k++){
+	$N=pow(-1,$k)*factorial($k);
+	$Sum_1=$Sum_1+$N;
+    $N_1=pow(-1,$k+1)*factorial($k);
+	$Sum_2=$Sum_2+$N_1;
+    $ps_1=perfect_square($Sum_1);
+    $ps_2=perfect_square($Sum_2);
+    if(($ps_1==0)||($ps_2==0))
+    {
+    	echo "<tr>";
+    	echo "<td>$k</td>";
+    	echo "<td>$Sum_1</td>";
+    	echo "<td>$Sum_2</td>";
+    	echo "</tr>";
+ 	 }  
+}
+echo "</table>";
+ $S_k=Sm_k($A,$B);
+ $ps=perfect_square($S_k);
+ if($ps==0){
+ 	echo "m1=43, m2=47"."<br \>";
+ 	echo "S(k): ".$S_k;
+    echo "<br \>";
+ 	echo "Summation k! is a perfect square.";
+ }
+function factorial(int $n){
+ $t=0;
+    if($n!=0){
+     for($i=1; $i<=$n; $i++){
+     if($i==1){
+         $t=$i;
+         }else{
+         $t=$t*$i;
+         }
+     }
+    }else{
+     $t=1;
+    }
+ return $t;
+}
+function perfect_square($n){
+	$t=sqrt($n);
+    $s=is_decimal($t);
+    return $s;
+}
+function is_decimal( $val )
+{
+    return is_numeric( $val ) && floor( $val ) != $val;
+}
+function Sm_k(int $a, int $b){
+	$Sum_3="";
+for($k=$a; $k<=$b; $k++){
+	$N=factorial($k);
+	$Sum_3=$Sum_3+$N;     	   
+}
+	return $Sum_3;	
+}
+?>
+</body>
+</html>
