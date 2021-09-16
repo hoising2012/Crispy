@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Arr=array(array(0,1,0),
+			array(0,0,0),
+            array(0,0,0)
+);
+$L=array(array());
+$V=1;
+$i=0;
+$j=1;
+do{
+	
+    if(($i==0)&&($j==1)){
+    	$L[$i][$j]=$V;
+    	$k=$i+2;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }  
+    }else if(($i==0)&&($j==0)){
+    $L[$i][$j]=$V;
+    	$k=$i+2;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }  
+    }else if(($i==0)&&($j==2)){
+    $L[$i][$j]=$V;
+    	$k=$i+2;
+        $l=$j-2;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }  
+    }else if(($i==1)&&($j==0)){
+    	 $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }  
+    }else if(($i==1)&&($j==1)){
+     $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }  
+    }else if(($i==1)&&($j==2)){
+     $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j-2;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }   
+    }else if(($i==2)&&($j==0)){
+ 		 $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-2;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }      
+    }else if(($i==2)&&($j==1)){
+     $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-2;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        } 
+    }else if(($i==2)&&($j==2)){
+    	 $L[$i][$j]=$V;
+    	$k=$i-1;
+        $l=$j-2;
+        if($Arr[$k][$l]==1){
+        $m=$i-2;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }        
+    }
+	$V++;
+}while($V<10);
+echo "<table>";
+for($i=0; $i<=2; $i++){
+echo "<tr>";
+	for($j=0; $j<=2; $j++){
+    echo "<td>".$L[$i][$j]."</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
