@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Arr=array();
+for($i=0; $i<=8; $i++){
+	if($i!=8){
+	$j="-";
+    $k=8-$i;
+    $j.=$k;
+    }else{
+    	$k=8-$i;
+        $j=$k;
+    }
+    $Arr[$i]=$j;
+}
+
+for($i=1; $i<=10; $i++){
+	$j=$i+8;
+    $Arr[$j]=$i;
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>sin(A)</th>";
+echo "<th>cos(A)</th>";
+echo "<th>X^2+Y^2</th>";
+echo "</tr>";
+for($i=0; $i<=18; $i++){
+		$Si="";
+        $Ci="";
+	for($j=0; $j<=99; $j++){
+    	$k=2*$j+1;
+        $neg=pow(-1,$j);
+        $f=factorial($k);
+        $PA=pow($Arr[$i],$k);
+		$p=$neg*($PA/$f);    
+    	$Si=$Si+$p;   
+        
+        $k_1=2*$j;
+        $neg_1=pow(-1,$j);
+        $f_1=factorial($k_1);
+        $PA_1=pow($Arr[$i],$k_1);
+		$p_1=$neg_1*($PA_1/$f_1);    
+    	$Ci=$Ci+$p_1; 
+    }
+    	$I=pow($Si,2)+pow($Ci,2);
+    	$I=round($I);
+   				echo "<tr>";
+                echo "<td>".$Arr[$i]."</td>";
+                echo "<td>$Si</td>";
+                echo "<td>$Ci</td>";
+                echo "<td>$I</td>";
+                echo "</tr>";            
+}
+echo "</table>";
+function factorial(int $n){
+ $t=0;
+    if($n!=0){
+     for($i=1; $i<=$n; $i++){
+     if($i==1){
+         $t=$i;
+         }else{
+         $t=$t*$i;
+         }
+     }
+    }else{
+     $t=1;
+    }
+ return $t;
+}
+?>
+</body>
+</html>
