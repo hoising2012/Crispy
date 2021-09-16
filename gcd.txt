@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$A=693;
+$B=392;
+$n=0;
+$P="";
+$Q="";
+do{
+	$C=floor($A/$B);
+    $D=$A-($C*$B);
+	$A=$B;
+    $B=$D;
+    $n++;
+}while($D>0);
+for($i=1; $i<=$n; $i++){
+	$P=floor($A/$B);
+	$Q=$A-$Q*$B;	
+}
+echo "The gcd(a,b) is "."$Q".".";
+?>
+</body>
+</html>
