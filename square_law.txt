@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$A=array();
+$B=array();
+$Arr=array();
+$Zero="0.";
+$P_negative=array();
+$Q_negative=array();
+$P_positive=array();
+$Q_positive=array();
+$average_1=array();
+$average_2=array();
+for($i=1; $i<=10; $i++){
+	$j=$i-1;
+    if($i==10){
+    	$A[$j]=-1;
+    }else{
+    $A[$j]="-";
+	$A[$j].=$Zero;
+    $A[$j].=$i;
+    }
+}
+for($i=11; $i<=20; $i++){
+    $Arr=str_split($i);
+    $j=$i-1;
+    $A[$j]="-";
+	$A[$j].=$Arr[0];
+    $A[$j].=".";
+    $A[$j].=$Arr[1];
+}
+for($i=0; $i<=10; $i++){
+    if($i==0){
+    	$B[$i]=0;
+    }else if($i==10){
+    	$B[$i]=1;
+    }else{
+	$B[$i]=$Zero;
+    $B[$i].=$i;
+    }
+}
+for($i=11; $i<=20; $i++){
+    $Arr=str_split($i);
+	$B[$i]=$Arr[0];
+    $B[$i].=".";
+    $B[$i].=$Arr[1];
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>x</th>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "<th>cos(theta)</th>";
+echo "<th>sin(theta)</th>";
+echo "<th>tan(theta)</th>";
+echo "</tr>";
+for($i=0; $i<=20; $i++){		
+		if($i<20){
+    	$P_negative[$i]=pow($A[$i],2)-1;
+        $Q_negative[$i]=pow($A[$i],2)+1;
+        $P_positive[$i]=pow($B[$i],2)-1;
+        $Q_positive[$i]=pow($B[$i],2)+1;                
+        $average_1[$i]=($P_negative[$i]+$Q_negative[$i])/2;
+        $average_2[$i]=($P_positive[$i]+$Q_positive[$i])/2;
+		}else{
+        $P_positive[$i]=pow($B[$i],2)-1;
+        $Q_positive[$i]=pow($B[$i],2)+1;                
+        $average_2[$i]=($P_positive[$i]+$Q_positive[$i])/2;        
+        }               
+}
+for($i=0; $i<=19; $i++){
+	$j=19-$i;
+    echo "<tr>";
+    echo "<td>$A[$j]</td>";
+	echo "<td>$P_negative[$j]</td>";
+    echo "<td>$Q_negative[$j]</td>";
+	echo "<td>$average_1[$j]</td>";
+    $cos=$P_negative[$j]/$Q_negative[$j];
+    $sin=(2*$A[$j])/$Q_negative[$j];
+    $tan=(2*$A[$j])/$P_negative[$j];
+    echo "<td>$cos</td>";
+    echo "<td>$sin</td>";
+	echo "<td>$tan</td>";     
+	echo "</tr>";
+}
+for($i=0; $i<=20; $i++){
+    echo "<tr>";
+    echo "<td>$B[$i]</td>";
+	echo "<td>$P_positive[$i]</td>";
+    echo "<td>$Q_positive[$i]</td>";
+	echo "<td>$average_2[$i]</td>";   
+    $cos=$P_positive[$i]/$Q_positive[$i];
+    $sin=(2*$B[$i])/$Q_positive[$i];
+    $tan=(2*$B[$i])/$P_positive[$i];
+    echo "<td>$cos</td>";
+    echo "<td>$sin</td>";
+	echo "<td>$tan</td>";        
+	echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
