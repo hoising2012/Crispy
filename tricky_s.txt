@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$prime=array(2,3,5,7,11,
+			 13,17,19,23,29,
+             31,37,41,43,47);
+$S=array();
+$V=7;
+for($i=1; $i<=15; $i++){	
+    $j=$i-1;
+    $x=($i*$prime[$j])/$V;
+    $y=floor($x);
+    $S[$j]=$x-$y;
+    $S[$j]=round($S[$j],3);
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>Index</th>";
+echo "<th>prime number</th>";
+echo "<th>S</th>";
+echo "<th>x[n]</th>";
+echo "</tr>";
+for($i=0; $i<=14; $i++){
+    	$k=$i+1;
+        $str="x[";
+        for($j=0; $j<=14; $j++){
+        	$l=$j+1;
+        	$t=$S[$i]+$S[$j];
+            if($t==1){
+          	$str.=$l;
+            $str.=",";
+			}
+     }    
+     $str = rtrim($str, ", ");
+     $str.="]";
+     if($S[$i]==0){
+            $str="";
+            }
+     echo "<tr>";
+     echo "<td>$k</td>";
+     echo "<td>$prime[$i]</td>";
+     echo "<td>$S[$i]</td>";
+     echo "<td>$str</td>";
+     echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
