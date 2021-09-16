@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Zero=0;
+$one=1;
+$two=2;
+$five=5;
+$nine=9;
+echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "<th>F</th>";
+echo "<th>I</th>";
+echo "</tr>";
+for($i=1; $i<=8; $i++){
+  $A=pow($two,$i);
+    $B=pow($five,$i);
+  $C=$A*$B;
+    $A_l=strlen($A);
+    $B_l=strlen($B);
+    if($i==1){
+     $time_ten=$one;
+        $time_ten.=$Zero;
+        $dot_nine=$nine;
+    }else{
+     $time_ten.=$Zero;
+        $dot_nine.=$nine;
+    }
+    if($C==$time_ten){
+     $I=$time_ten-$dot_nine;
+     $t_l=strlen($time_ten)-1;
+    }
+    $dim_nine=$Zero;
+    $dim_nine.=".";
+    $dim_nine.=$dot_nine;
+    $A_t=dot_zero($B_l,$A);
+    $B_t=dot_zero($A_l,$B);
+    $I_t=dot_zero($t_l,1);
+ echo "<tr>";
+                echo "<td>$A_t</td>";
+                echo "<td>$B_t</td>";
+                echo "<td>$I_t</td>";
+                echo "<td>$dim_nine</td>";
+                echo "<td>$I</td>";
+                echo "</tr>";
+}
+echo "</table>";
+function dot_zero(int $n, int $q){
+ $zero="0.";
+        $m=$n-1;
+        $r=1;
+        $t="";
+        if($m==0){
+         $t=$zero;
+            $t.=$q;
+        }else{
+         $t=$zero;
+       do{
+             $t.="0";
+             $r++;
+             }while($r<$n);
+         $t.=$q;
+        }
+ return $t;
+}
+?>
+</body>
+</html>
