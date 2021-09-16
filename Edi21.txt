@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Arr=array(array(0,0,1,0,0),
+			array(0,0,0,0,0),
+            array(0,0,0,0,0),
+            array(0,0,0,0,0),
+            array(0,0,0,0,0)
+);
+$E=array(array());
+$edi=21;
+$i=0;
+$j=2;
+do{
+	
+    if(($i==0)&&($j==2)){
+    	
+        $E[$i][$j]=$edi;
+    	$k=$i+4;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;
+        }
+         
+    	}else if(($i==0)&&($j==0)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i+4;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==0)&&($j==1)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i+4;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==0)&&($j==3)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i+4;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==0)&&($j==4)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i+4;
+        $l=$j-4;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==1)&&($j==0)){
+        
+          $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==1)&&($j==1)){
+        
+         $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+     
+        }else if(($i==1)&&($j==2)){
+        
+         $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==1)&&($j==3)){
+        
+         $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==1)&&($j==4)){
+        
+         $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j-4;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    
+        }else if(($i==2)&&($j==0)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+ 		
+        }else if(($i==2)&&($j==1)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+   
+        }else if(($i==2)&&($j==2)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==2)&&($j==3)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==2)&&($j==4)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j-4;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==3)&&($j==0)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+ 		
+        }else if(($i==3)&&($j==1)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+   
+        }else if(($i==3)&&($j==2)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==3)&&($j==3)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==3)&&($j==4)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j-4;
+        if($Arr[$k][$l]==1){
+        $m=$i+1;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==4)&&($j==0)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-4;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+ 		
+        }else if(($i==4)&&($j==1)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-4;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+   
+        }else if(($i==4)&&($j==2)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-4;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==4)&&($j==3)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j+1;
+        if($Arr[$k][$l]==1){
+        $m=$i-4;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }else if(($i==4)&&($j==4)){
+        
+        $E[$i][$j]=$edi;
+    	$k=$i-1;
+        $l=$j-4;
+        if($Arr[$k][$l]==1){
+        $m=$i-4;
+        $Arr[$m][$j]=1;
+        $i=$m;
+        }else{
+        $Arr[$k][$l]=1;
+        $i=$k;
+        $j=$l;}
+    	
+        }   
+    
+    
+	$edi++;
+}while($edi<46);
+
+
+echo "<table>";
+for($i=0; $i<=4; $i++){
+echo "<tr>";
+	for($j=0; $j<=4; $j++){
+    echo "<td>".$E[$i][$j]."</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
