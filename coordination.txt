@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$a=3;
+$b=2;
+ echo "Suppose y=ax+b: Let a=3 and b=2,";
+    echo "<br \>";
+ $t=-1/$a;
+    echo "Then the slope perpendicular to y: ".$t;
+    echo "<br \>";
+    $theta=atan($t);
+ echo "Let theta be the angel: ".$theta;
+    echo "<br \>";
+    $x=$b/($t-$a);
+    $y=$t*$x;
+    $r=sqrt(pow($x,2)+pow($y,2));
+    echo "The x-coordinate: ".$x.", ";
+    echo "The y-coordinate: ".$y.", ";
+    echo "The shortest path: ".$r;
+    ?>
+</body>
+</html>
