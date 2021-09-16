@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Adult=18;
+$middle_age=45;
+$V=$Adult/2;
+$U=sqrt(pow($V,2)-$middle_age);
+$X_1=$V-$U;
+$X_2=$V+$U;
+$side_2=$X_1-6;
+if($side_2 < 0){
+ $Area=M_PI*pow($X_2,2)/4;
+}else{
+ $Area=M_PI*pow($X_1,2)/4;
+}
+echo "The Area of the segment is ".$Area.".";
+?>
+</body>
+</html>
