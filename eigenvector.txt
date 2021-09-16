@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td, th {  
+  border: 1px solid #000;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+<?php
+echo "<table>";
+echo "<tr>";
+echo "<th>F(x,y)</th>";
+echo "<th>X</th>";
+echo "<th>Y</th>";
+echo "</tr>";
+for($x=0; $x<=1; $x++){
+ for($y=0; $y<=1; $y++){
+     $F=(1+$x)*(1-$x-$y);
+        if($F==0){
+         echo "<tr>";
+         echo "<td>$F</td>";
+         echo "<td>$x</td>";
+                echo "<td>$y</td>";
+         echo "</tr>";
+        }    
+    }
+}
+echo "</table>";
+?>
+</body>
+</html>
