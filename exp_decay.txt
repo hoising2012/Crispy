@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+echo "<table>";
+echo "<tr>";
+echo "<th>t</th>";
+echo "<th>I</th>";
+echo "<th>-I</th>";
+echo "</tr>";
+for($t=0; $t<=9; $t++){
+ $I=2*exp(-1*$t);
+    $I=round($I,3);
+    if($t!=9){
+    $I_inverse=-1*$I;
+    }else{
+    $I_inverse=0;
+    }
+    echo "<tr>";
+    echo "<td>$t</td>";
+    echo "<td>$I</td>";
+    echo "<td>$I_inverse</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
