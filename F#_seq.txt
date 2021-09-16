@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$F=array(2,3,1,1.5,0.5);
+for($i=0; $i<=4; $i++){	
+    if(($F[$i]<$F[$i+1])&&($i!=4)){
+    	$A=$F[$i];
+        $F[$i]=$F[$i+1];
+        $F[$i+1]=$A;
+    }
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>F*2</th>";
+echo "<th>F*10</th>";
+echo "<th>Control Signal</th>";
+echo "</tr>";
+for($i=0; $i<=4; $i++){
+	$B=2*$F[$i];
+    $C=10*$F[$i];
+    $P=$C/$B;
+    $Q=floor($P);
+    $S=$B*($P-$Q);
+    echo "<tr>";
+	echo "<td>$B</td>";
+	echo "<td>$C</td>";
+	echo "<td>$S</td>";
+	echo "</tr>";
+}
+echo "<table>";
+?>
+</body>
+</html>
