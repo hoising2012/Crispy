@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$prime=array(2, 3, 5, 7);
+$c=array();
+for($i=0; $i<=3; $i++){
+	$ps=pow($prime[$i],2);
+    $c[$i]=$ps-1;
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "</tr>";
+for($a=1; $a<=50; $a++){
+	for($b=1; $b<=50; $b++){
+    	for($i=0; $i<=3; $i++){
+        	$p=$a+$b;
+            $q=$b*($a-$c[$i]);
+            if($p==$q){
+            	echo "<tr>";
+                echo "<td>$a</td>";
+                echo "<td>$b</td>";
+                echo "<td>$c[$i]</td>";
+                echo "</tr>";            
+            }
+        }    
+    }
+}
+echo "</table>"
+?>
+</body>
+</html>
