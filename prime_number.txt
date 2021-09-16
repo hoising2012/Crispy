@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$A=array();
+$B=array();
+  echo "<table>";
+  echo "<tr>";
+  echo "<th>Index</th>";
+  for($i=0; $i<=49; $i++){
+ $k=$i+1;
+    $A[$i]=$k;
+    echo "<th>$k</th>";
+  }
+  echo "</tr>";
+for($i=0; $i<=49; $i++){
+ $k=$i+1;
+ echo "<tr>";
+    echo "<td>$k</td>";
+ for($j=0; $j<=49; $j++){
+     $x=$A[$j]/$A[$i];
+        $y=is_decimal($x);
+        if($y==0){
+        $B[$j]=$B[$j]+1;
+         $str="(";
+            $str.=$A[$i];
+            $str.=",";
+            $str.=$A[$j];
+            $str.=")";
+        echo "<td>$str</td>";
+        }else{
+         echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+ echo "<tr>";
+    echo "<td>hit on target</td>";
+ for($i=0; $i<=49; $i++){
+ if($B[$i]==2){
+ echo "<td>O</td>";
+ }else{
+ echo "<td>$B[$i]</td>";
+ }
+ }echo "</tr>";
+echo "</table>";
+function is_decimal( $val )
+{
+    return is_numeric( $val ) && floor( $val ) != $val;
+}
+?>
+</body>
+</html>
