@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Control=array(8,4);
+$x=array();
+$n=0;
+for($i=0; $i<=16; $i++){
+	 if($i==0){
+        $x[$n]=$i;
+        $n++;
+        }
+	$t=$i;
+	for($j=0; $j<=1; $j++){
+        $k=$t-$Control[$j];
+        $t=$k;
+        if($k==0){
+        $x[$n]=$i;
+        $n++;
+        }  
+    }
+}
+echo "<table>";
+echo "<tr>";
+echo "<th>3 sub-sequences</th>";
+echo "<th>Control Signal</th>";
+echo "</tr>";
+for($i=0; $i<=2; $i++){
+	echo "<tr>";
+    echo "<td>$x[$i]</td>";
+	if($i!=2){
+    $y=$x[$i+1]-$x[$i];
+    echo "<td>$y</td>";
+    }
+	echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
