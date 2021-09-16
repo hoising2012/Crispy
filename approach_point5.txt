@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$one=100*100;
+$integral="";
+for($x=0; $x<=$one; $x++){
+ $p=$x/$one;
+    $q=($x-1)/$one;
+    $root_p=sqrt($p);
+    $rect=$root_p*($p-$q);
+    $integral=$integral+$rect;
+}
+$integral=round($integral,4);
+$ching=1/$integral;
+$ching=round($ching,1);
+$integral_xs=1-$integral;
+echo "Integrate x square: ".$integral_xs;
+echo "<br \>";
+echo "Integrate square root of x: ".$integral;
+echo "<br \>";
+echo "Here we approach: ".$ching;
+?>
+</body>
+</html>
