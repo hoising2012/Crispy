@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{ background:#FFF; }
+#my_canvas{ background:#FFF; border:#999 1px solid; }
+</style>
+<script>
+   var showA = new Array(39);
+   var showB = new Array(39);
+   var showC = new Array(39);
+   var buildings = [ {"id":"1","x":0,"y":0,"w":20,"h":20,"bg":"red"},
+                      {"id":"2","x":20,"y":0,"w":20,"h":20,"bg":"red"},
+                      {"id":"3","x":40,"y":0,"w":20,"h":20,"bg":"red"},
+					  {"id":"4","x":0,"y":20,"w":20,"h":20,"bg":"red"},
+                      {"id":"0","x":20,"y":20,"w":20,"h":20,"bg":"red"},
+                      {"id":"5","x":40,"y":20,"w":20,"h":20,"bg":"red"},
+					  {"id":"9","x":60,"y":20,"w":20,"h":20,"bg":"red"},
+                      {"id":"6","x":0,"y":40,"w":20,"h":20,"bg":"red"},
+                      {"id":"7","x":20,"y":40,"w":20,"h":20,"bg":"red"},
+					  {"id":"8","x":40,"y":40,"w":20,"h":20,"bg":"red"},
+                      {"id":"10","x":60,"y":40,"w":20,"h":20,"bg":"red"},
+                      {"id":"15","x":80,"y":40,"w":20,"h":20,"bg":"red"},
+					  {"id":"11","x":0,"y":60,"w":20,"h":20,"bg":"red"},
+                      {"id":"12","x":20,"y":60,"w":20,"h":20,"bg":"red"},
+                      {"id":"13","x":40,"y":60,"w":20,"h":20,"bg":"red"},
+					  {"id":"14","x":60,"y":60,"w":20,"h":20,"bg":"red"},
+                      {"id":"16","x":80,"y":60,"w":20,"h":20,"bg":"red"},
+                      {"id":"22","x":100,"y":60,"w":20,"h":20,"bg":"red"},
+					  {"id":"17","x":0,"y":80,"w":20,"h":20,"bg":"red"},
+                      {"id":"18","x":20,"y":80,"w":20,"h":20,"bg":"red"},
+                      {"id":"19","x":40,"y":80,"w":20,"h":20,"bg":"red"},
+					  {"id":"20","x":60,"y":80,"w":20,"h":20,"bg":"red"},
+                      {"id":"21","x":80,"y":80,"w":20,"h":20,"bg":"red"},
+                      {"id":"23","x":100,"y":80,"w":20,"h":20,"bg":"red"},
+					  {"id":"30","x":120,"y":80,"w":20,"h":20,"bg":"red"},
+                      {"id":"24","x":0,"y":100,"w":20,"h":20,"bg":"red"},
+                      {"id":"25","x":20,"y":100,"w":20,"h":20,"bg":"red"},
+					  {"id":"26","x":40,"y":100,"w":20,"h":20,"bg":"red"},
+                      {"id":"27","x":60,"y":100,"w":20,"h":20,"bg":"red"},
+                      {"id":"28","x":80,"y":100,"w":20,"h":20,"bg":"red"},
+					  {"id":"29","x":100,"y":100,"w":20,"h":20,"bg":"red"},
+                      {"id":"31","x":120,"y":100,"w":20,"h":20,"bg":"red"},
+                      {"id":"32","x":0,"y":120,"w":20,"h":20,"bg":"red"},
+					  {"id":"33","x":20,"y":120,"w":20,"h":20,"bg":"red"},
+                      {"id":"34","x":40,"y":120,"w":20,"h":20,"bg":"red"},
+                      {"id":"35","x":60,"y":120,"w":20,"h":20,"bg":"red"},
+					  {"id":"36","x":80,"y":120,"w":20,"h":20,"bg":"red"},
+                      {"id":"37","x":100,"y":120,"w":20,"h":20,"bg":"red"},
+                      {"id":"38","x":120,"y":120,"w":20,"h":20,"bg":"red"}
+					  
+    ];
+function myFunction() {
+  var n;
+  n = document.getElementById("numb").value;
+  
+  if(showA[n]==0 && showB[n]==0 && showC[n]==0){
+	showA[n]=fillblock(n);
+  }else if(showA[n]==1 && showB[n]==0 && showC[n]==0){
+	showB[n]=fillblock(n);
+	showA[n]=0;
+  }else if(showA[n]==0 && showB[n]==1 && showC[n]==0){
+	showC[n]=fillblock(n);
+	showB[n]=0;
+  }else if( showA[n]==0 && showB[n]==0 && showC[n]==1){
+	showB[n]=fillblock(n);
+  }else if(showA[n]==0 && showB[n]==1 && showC[n]==1){
+	showA[n]=fillblock(n);
+	showC[n]=0;
+  }else if(showA[n]==1 && showB[n]==1 && showC[n]==0){
+	showA[n]=fillblock(n);
+	showB[n]=0;
+  }
+  
+  
+  
+}
+function fillblock(n){
+	var ctx = document.getElementById('my_canvas').getContext('2d');
+	 for(var i = 0; i < buildings.length; i++){
+        var b = buildings[i];
+	
+		if (b.id == n && showA[n]==0 && showB[n]==0 && showC[n]==0){
+        ctx.fillStyle = "blue";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 1;
+		}else if( b.id ==n && showA[n]==1 && showB[n]==0 && showC[n]==0){
+		ctx.fillStyle = "green";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 1;
+		}else if (b.id == n && showA[n]==0 && showB[n]==1 && showC[n]==0){
+        ctx.fillStyle = "yellow";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 1;
+		}else if (b.id == n && showA[n]==0 && showB[n]==0 && showC[n]==1){
+        ctx.fillStyle = "green";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 1;
+		}else if( b.id ==n && showA[n]==0 && showB[n]==1 && showC[n]==1){
+		ctx.fillStyle = "blue";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 1;
+		}else if( b.id ==n && showA[n]==1 && showB[n]==1 && showC[n]==0){
+		ctx.fillStyle = "red";
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+		return 0;
+		}
+		
+    }
+}
+function initCanvas(){
+    var ctx = document.getElementById('my_canvas').getContext('2d');
+ 
+    for(var i = 0; i < buildings.length; i++){
+        var b = buildings[i];
+		showA[i] = 0;
+		showB[i] = 0;
+		showC[i] = 0;
+        ctx.fillStyle = b.bg;
+		ctx.fillRect(b.x,b.y,b.w,b.h);
+    }
+	
+}
+window.addEventListener('load', function(event) {
+    initCanvas();
+});
+</script>
+</head>
+<body>
+<canvas id="my_canvas" width="140" height="140"></canvas>
+<p>Please input a number between 0 and 38:</p>
+<input id="numb">
+<button type="button" onclick="myFunction()">Submit</button>
+<button type="button" onclick="initCanvas()">Reset</button>
+</body>  
+</html>
