@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+echo "<table>";
+echo "<tr>";
+echo "<th>I</th>";
+echo "<th>I inverse</th>";
+echo "<th>S</th>";
+echo "</tr>";
+for($x=0; $x<=8; $x++){
+	for($y=0; $y<=8; $y++){
+		$F=$x*$y;
+        $P=$F/9;
+        $Q=floor($P);
+        $S=9*($P-$Q);
+        $S=round($S);
+		if($S==1){
+        	echo "<tr>";
+            echo "<td>$x</td>";
+            echo "<td>$y</td>";
+            echo "<td>$S</td>";
+        	echo "</tr>";
+        }
+	}
+}
+echo "<table>";
+?>
+</body>
+</html>
