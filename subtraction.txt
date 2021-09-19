@@ -12,7 +12,7 @@ echo "Here is an additon problem:";
 echo "<br \>";
 echo "Suppose a=".$a." and c=".$c.",";
 echo "<br \>";
-if($d=$a){
+if($d=$b){
 echo "Then a-c=".$b;
 }
 ?>
