@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$B=143;
+$b=44;
+$A=231;
+$P="";
+$Q="";
+do{
+	$C=floor($A/$B);
+    $D=$A-($C*$B);
+	$A=$B;
+    $B=$D;
+    $n++;
+}while($D>0);
+for($i=1; $i<=$n; $i++){
+	$P=floor($A/$B);
+	$Q=$A-$Q*$B;	
+}
+echo "The gcd(a,b) is "."$Q".".";
+echo "<br \>";
+$hash=$b/$Q;
+$toe="";
+for($x=1; $x<=10; $x++){
+	$k="-";
+    $k.=$x;
+    for($y=1; $y<=10; $y++){
+		$Kappa=143*$k+231*$y;
+        if($Kappa==$Q){
+			$t=$k*$hash;
+            if($t<0){
+			$toe=231+$t;
+            }else if(($t<231)&&($t>0)){
+            $toe=$t;
+            }else if($t>231){
+            	$tic=$t/231;
+                $tac=floor($tic);
+                $toe=231*($tic-$tac);      
+            }			
+		}
+	}
+}
+$str="The first 5 solutions of Xm: ";
+for($i=1; $i<=5; $i++){
+    $Xm=$toe+$i*(231/$Q);
+	$str.=$Xm;
+    $str.=",";
+}
+$str = rtrim($str, ", ");
+echo $str;
+?>
+</body>
+</html>
