@@ -18,7 +18,9 @@ for($i=1; $i<=$n; $i++){
 	$P=floor($A/$B);
 	$Q=$A-$Q*$B;	
 }
-echo "The gcd(a,b) is "."$Q".".";
+echo "143x=44 mod 231, find x:";
+echo "<br \>";
+echo "The gcd(143,231) is "."$Q".".";
 echo "<br \>";
 $hash=$b/$Q;
 $toe="";
