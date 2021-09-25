@@ -18,7 +18,7 @@ for($i=1; $i<=$n; $i++){
 	$P=floor($A/$B);
 	$Q=$A-$Q*$B;	
 }
-echo "143x=44 mod 231, find x:";
+echo "Suppose 143x=44 mod 231 is true, find x:";
 echo "<br \>";
 echo "The gcd(143,231) is "."$Q".".";
 echo "<br \>";
