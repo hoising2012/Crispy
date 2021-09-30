@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$prime=array(13, 17, 19, 23, 29);
+echo "<table>";
+echo "<tr>";
+echo "<th>Prime number</th>";
+echo "<th>mod</th>";
+echo "<th>Remainder</th>";
+echo "</tr>";
+for($i=0; $i<=4; $i++){
+    $k=6-$i;
+    $tic=$prime[$i]/$k;
+    $tac=floor($tic);
+    $toe=$k*($tic-$tac);
+	echo "<tr>";
+	echo "<td>$prime[$i]</td>";
+    echo "<td>$k</td>";
+	echo "<td>$toe</td>";
+	echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
