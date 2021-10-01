@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{ background:#FFF; }
+#my_canvas{ background:#FFF; border:#999 1px solid; }
+</style>
+</head>
+<body>
+<canvas id="canvas" width="140" height="140"></canvas>
+<script>
+var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    rects = [ 
+					  {id:1,x:0,y:0,w:20,h:20},
+                      {id:2,x:20,y:0,w:20,h:20},
+                      {id:3,x:40,y:0,w:20,h:20},
+					  {id:4,x:0,y:20,w:20,h:20},
+                      {id:0,x:20,y:20,w:20,h:20},
+                      {id:5,x:40,y:20,w:20,h:20},
+					  {id:9,x:60,y:20,w:20,h:20},
+                      {id:6,x:0,y:40,w:20,h:20},
+                      {id:7,x:20,y:40,w:20,h:20},
+					  {id:8,x:40,y:40,w:20,h:20},
+                      {id:10,x:60,y:40,w:20,h:20},
+                      {id:15,x:80,y:40,w:20,h:20},
+					  {id:11,x:0,y:60,w:20,h:20},
+                      {id:12,x:20,y:60,w:20,h:20},
+                      {id:13,x:40,y:60,w:20,h:20},
+					  {id:14,x:60,y:60,w:20,h:20},
+                      {id:16,x:80,y:60,w:20,h:20},
+                      {id:22,x:100,y:60,w:20,h:20},
+					  {id:17,x:0,y:80,w:20,h:20},
+                      {id:18,x:20,y:80,w:20,h:20},
+                      {id:19,x:40,y:80,w:20,h:20},
+					  {id:20,x:60,y:80,w:20,h:20},
+                      {id:21,x:80,y:80,w:20,h:20},
+                      {id:23,x:100,y:80,w:20,h:20},
+					  {id:30,x:120,y:80,w:20,h:20},
+                      {id:24,x:0,y:100,w:20,h:20},
+                      {id:25,x:20,y:100,w:20,h:20},
+					  {id:26,x:40,y:100,w:20,h:20},
+                      {id:27,x:60,y:100,w:20,h:20},
+                      {id:28,x:80,y:100,w:20,h:20},
+					  {id:29,x:100,y:100,w:20,h:20},
+                      {id:31,x:120,y:100,w:20,h:20},
+                      {id:32,x:0,y:120,w:20,h:20},
+					  {id:33,x:20,y:120,w:20,h:20},
+                      {id:34,x:40,y:120,w:20,h:20},
+                      {id:35,x:60,y:120,w:20,h:20},
+					  {id:36,x:80,y:120,w:20,h:20},
+                      {id:37,x:100,y:120,w:20,h:20},
+                      {id:38,x:120,y:120,w:20,h:20}
+					  
+    ];
+	var i = 0, r;
+
+// render initial rects.
+while(r = rects[i++]) ctx.rect(r.x, r.y, r.w, r.h);
+ctx.fillStyle = "red"; ctx.fill();
+
+canvas.onmousemove = function(e) {
+
+  // important: correct mouse position:
+  var rect = this.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top,
+      i = 0, r;
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // for demo
+   
+  while(r = rects[i++]) {
+    // add a single rect to path:
+    ctx.beginPath();
+    ctx.rect(r.x, r.y, r.w, r.h);    
+    
+    // check if we hover it, fill red, if not fill it blue
+    ctx.fillStyle = ctx.isPointInPath(x, y) ? "blue" : "red";
+    ctx.fill();
+  }
+};
+</script>
+</body>  
+</html>
