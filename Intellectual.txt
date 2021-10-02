@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$I=array(array());
+for($i=0; $i<=10; $i++){
+ $j="-";
+    $j.=$i;
+    $I[0][$i]=0;
+    $I[1][$i]=0;
+ for($k=1; $k<=99; $k++){
+     $t=pow_negative_one($k);
+        $t_1=S_i($k,$i)-C_i($k,$i);
+        $t_2=S_i($k,$j)-C_i($k,$j);
+        $Aj=$t*$t_2;
+        $Ai=$t*$t_1;
+     $I[0][$i]=$I[0][$i]+$Aj;
+        $I[1][$i]=$I[1][$i]+$Ai;
+    }
+}
+ echo "<table>";
+ echo "<tr>";
+ echo "<th>n</th>";
+ echo "<th>I(n)</th>";
+ echo "</tr>";
+ for($i=0; $i<=1; $i++){
+     for($j=0; $j<=10; $j++){
+            if(($i==0)&&($j!=10)){
+             $n="-";
+                $k=10-$j;
+                $n.=$k;
+                if($k==1){
+                echo "<tr>";
+                echo "<td style=\"background-color:#0FFFF0\">$n</td>";
+                echo "<td style=\"background-color:#F0FF0F\">".$I[$i][$k]."</td>";
+                echo "</tr>";
+                }
+            }else if($i==1){
+             $n=$j;
+             	if($n==1){
+                echo "<tr>";
+                echo "<td style=\"background-color:#0FFFF0\">$n</td>";
+                echo "<td style=\"background-color:#F0FF0F\">".$I[$i][$j]."</td>";
+                echo "</tr>";
+                }else if($n==0){
+                echo "<tr>";
+                echo "<td>$n</td>";
+                echo "<td>".$I[$i][$j]."</td>";
+                echo "</tr>";
+                }
+            }
+        }
+    }
+    echo "</table>";
+function S_i(int $k, int $n){
+ $Si=$n*$k-1;
+    $t=$k/pow($Si,2);
+ return $t;
+}
+function C_i(int $k, int $n){
+ $Ci=$n*$k+1;
+    $t=$k/pow($Ci,2);
+ return $t;
+}
+function pow_negative_one(int $k){ 
+    $t=pow(-1,$k-1);
+    return $t;
+}
+?>
+</body>
+</html>
