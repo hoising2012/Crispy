@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+  $I_n="";
+  $k=0;
+  do{
+   $I=pow(-1,$k)/(2*$k+1);
+    $I_n=$I_n+$I;
+    $k++;
+  }while($I_n<1);
+ echo "I[n]: ".$I_n." for n is ".($k-1);
+?>
+</body>
+</html>
