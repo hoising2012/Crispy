@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {text-align: center;}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+<?php
+echo "<div style=\"text-align:center\">";
+$first_inherit=1;
+echo "<span class=\"dot\">$first_inherit</span>";
+echo "</div>";
+for($i=2; $i<=5; $i++){
+	$T_n=($i*($i-1))/2+1;
+    $Sum="";
+echo "<div style=\"text-align:center\">";
+	for($j=1; $j<=$i; $j++){
+    	if($j==1){
+        echo "<span class=\"dot\">$T_n</span>";
+        $Sum=pow($T_n,2);
+        }else{
+        $T_m=triangular_number($T_n,$j-1);
+    	echo "<span class=\"dot\">$T_m</span>";
+        $Sum=$Sum+pow($T_m,2);
+        }
+    }
+    echo "</div>"; 
+    if($i==5){
+    	echo "<p>The sum of n square at 5th rows: ".$Sum."<p>";
+    }
+}
+function triangular_number($p, $q){
+		$t=$p+$q;
+		return $t;
+}
+?>
+</body>
+</html>
