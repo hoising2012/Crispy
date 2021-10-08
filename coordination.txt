@@ -10,7 +10,7 @@ $b=2;
     echo "Then the slope perpendicular to y: ".$t;
     echo "<br \>";
     $theta=atan($t);
- echo "Let theta be the angel: ".$theta;
+ echo "Let theta be the angle: ".$theta;
     echo "<br \>";
     $x=$b/($t-$a);
     $y=$t*$x;
