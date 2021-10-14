@@ -33,7 +33,7 @@ for($i=0; $i<=14; $i++){
         }      
 }
 $r=min($primitive_root);
-echo "Let r is a primitive root mod 17, hence r is equal to ".$r.".";
+echo "Let r be a primitive root mod 17, hence r is equal to ".$r.".";
 function is_decimal( $val )
 {
     return is_numeric( $val ) && floor( $val ) != $val;
