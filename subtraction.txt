@@ -8,7 +8,7 @@ $c=M_PI/5;
 $a=2*$c*cos((($gamma-$beta)/180)*M_PI);
 $b=2*$c*cos(((90-$beta/2)/180)*M_PI);
 $q=$a-$c;
-echo "Here is an ubtraction problem:";
+echo "Here is an subtraction problem:";
 echo "<br \>";
 echo "Suppose a=".$a." and c=".$c.",";
 echo "<br \>";
