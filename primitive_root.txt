@@ -40,7 +40,7 @@ for($i=0; $i<=14; $i++){
         }      
 }
 $r=min($primitive_root);
-echo "Let r be a primitive root mod 17, hence r is equal to ".$r.".";
+echo "Let r be a primitive root mod ".$p.", hence r is equal to ".$r.".";
 }else{
 	echo $p." is not a prime number.";
 }
