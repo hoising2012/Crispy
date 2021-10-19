@@ -2,6 +2,7 @@
 <html>
 <body>
 <?php
+$flag="";
 $p=17;
 $n=$p-1;
 $prime_diviser=array();
@@ -14,6 +15,7 @@ for($i=0; $i<=14; $i++){
 	if($p==$prime[$i]){
     	echo $p." is a prime number.";
 	echo "<br \>";
+	$flag++;
     }
 }
 if($flag!=0){
