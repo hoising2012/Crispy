@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$Dia=array(1,4,9,16,25,
+		36,49,64,81,100);
+$F=9;
+echo "<table>";
+echo "<tr>";
+echo "<th>k</th>";
+echo "<th>k^2</th>";
+echo "<th>QR/QnR</th>";
+echo "</tr>";
+for($i=1; $i<=8; $i++){
+	echo "<tr>";
+	$k_square=pow($i,2);
+    $tic=$k_square/$F;
+    $tac=floor($tic);
+    $toe=$F*($tic-$tac);
+	$toe=round($toe);
+    if($toe!=0){
+    	echo "<td>$i</td>";
+        echo "<td>$toe</td>";
+        }
+    $count=0;
+    for($j=0; $j<=9; $j++){
+    	$ti=$Dia[$j]/$F;
+   		$ta=floor($ti);
+        $to=$F*($ti-$ta);
+        $to=round($to);
+        if($to==$i){
+        	$count++;
+        }    
+    }
+    if(($count!=0)&&($toe!=0)){
+        echo "<td>QR</td>";
+        }else if(($count==0)&&($toe!=0)){
+        echo "<td>QnR</td>";
+        }
+     echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
