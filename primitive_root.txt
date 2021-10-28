@@ -30,7 +30,6 @@ for($i=0; $i<=14; $i++){
 $d=min($prime_diviser);
 $t=$n/$d;
 $count=0;
-$str="The primitive roots within number 1-50: ";
 for($i=0; $i<=14; $i++){   
      $ti=pow($prime[$i],$t);
      $tic=$ti/$p;
@@ -39,14 +38,9 @@ for($i=0; $i<=14; $i++){
      $toe=round($toe);   
      if($toe!=1){
         $primitive_root[$count]=$prime[$i];  
-	$str.=$primitive_root[$count];
-        $str.=", ";
   		$count++;
         }      
 }
-$str = rtrim($str, ", ");
-echo $str;
-echo "<br \>";
 $r=min($primitive_root);
 echo "Let r be a primitive root mod ".$p.", hence r is equal to ".$r.".";
 }else{
