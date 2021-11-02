@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$a=45;
+$sigma=60;
+$epsilon=30;
+echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "<th>D</th>";
+echo "<th>E</th>";
+echo "<th>F</th>";
+echo "<th>G</th>";
+echo "</tr>";
+for($s=0; $s<=5; $s++){
+	$s_1=$s*cos(($a/180)*M_PI);
+	for($e=0; $e<=45; $e++){
+		$b=45-$e;    
+    	$x=$s/(2*sin(((45-$b)/180)*M_PI));
+        $y=$x*sin(($b/180)*M_PI);
+        $h=$s_1+$y;
+        $m=$h*cos(($a/180)*M_PI);
+        $g=$m/(2*cos(($sigma/180)*M_PI)+1);
+        $L=2*$g;
+        $Area_of_square=pow($h,2);
+        if(($s==5)&&($e!=0)){
+    	echo "<tr>";
+        echo "<td>$x</td>";
+        echo "<td>$y</td>";
+        echo "<td>$h</td>";
+        echo "<td>$m</td>";
+        echo "<td>$g</td>";
+        echo "<td>$L</td>";
+        echo "<td>$Area_of_square</td>";
+		echo "</tr>";
+ 		}   
+    }
+}
+echo "</table>";
+?>
+</body>
+</html>
