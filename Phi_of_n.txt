@@ -4,20 +4,16 @@
 <?php
 $x = 100;
 $i = 1;
-$c = 0;
-$factor=array();
 $A=1;
 echo "The factors of the " . $x . " are: ";
 while ($i <= $x) {
     if ($x % $i == 0) {
-        $factor[$c]=$i;
-        echo $factor[$c] . " ";
-        $flag=primeCheck($factor[$c]);
+        echo $i . " ";
+        $flag=primeCheck($i);
         if($flag==1){
-        	$a=1-1/$factor[$c];
+        	$a=1-1/$i;
         	$A=$A*$a;
         }
-        $c++;
     }
     ++$i;
 }
