@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$a_0=1;
+$Sum="";
+echo "<table>";
+echo "<tr>";
+echo "<th>n</th>";
+echo "<th>a_n</th>";
+echo "<tr>";
+for($i=0; $i<=5; $i++){
+	$a_n=2*pow(5,$i)-1;
+	$a_1=4+5*$a_0;
+    $Sum=$Sum+$a_0;
+    if($a_0==$a_n){
+	echo "<tr>";
+	echo "<td>$i</td>";
+    echo "<td>$a_0</td>";
+	echo "</tr>";
+    }
+    $a_0=$a_1;
+}
+echo "</table>";
+echo "The sum of generating function: ".$Sum.".";
+?>
+</body>
+</html>
