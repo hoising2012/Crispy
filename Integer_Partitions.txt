@@ -157,6 +157,40 @@ for($i=0; $i<=max($G)-1; $i++){
          echo "</tr>";
     }
 echo "</table>";
+$X=array(4,3,1);
+$Y=array();
+echo "<table>";
+for($i=0; $i<=max($X)-1; $i++){
+	$B=$X[$i];
+    echo "<tr>";
+    for($j=0; $j<=max($X)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$Y[$j]=$Y[$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=sizeof($Y)-1; $i++){		
+    	$F=$Y[$i];    
+        echo "<tr>";
+        for($j=0; $j<=sizeof($Y)-1; $j++){
+        	$T=$F-$j;
+            if($T>0){
+            echo "<td>O</td>";
+            }else{
+            echo "<td>X</td>";
+            }
+        
+        }
+         echo "</tr>";
+    }
+echo "</table>";
 ?>
 </body>
 </html>
