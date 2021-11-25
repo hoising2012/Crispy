@@ -14,7 +14,7 @@ th, td {
 </head>
 <body>
 <?php
-$A=array(2,3,2,1);
+$A=array(2,3,1,2);
 $S=array();
 echo "<table>";
 for($i=0; $i<=sizeof($A)-1; $i++){
