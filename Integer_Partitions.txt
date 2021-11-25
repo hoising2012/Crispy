@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$A=array(3,2,2,1);
+$P=array(1,1,1);
+$Q=array(2,2);
+$S=array();
+$H=array();
+$G=array();
+echo "<table>";
+for($i=0; $i<=sizeof($A)-1; $i++){
+	$B=$A[$i];
+    echo "<tr>";
+    for($j=0; $j<=sizeof($A)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$S[$j]=$S[$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=max($S)-1; $i++){
+		if($i<sizeof($S)){
+    	$F=$S[$i];
+        }else{
+        	$F=0;
+        }
+        echo "<tr>";
+        for($j=0; $j<=max($S)-1; $j++){
+        	$T=$F-$j;
+            if($T>0){
+            echo "<td>O</td>";
+            }else{
+            echo "<td>X</td>";
+            }
+        
+        }
+         echo "</tr>";
+    }
+echo "</table>";
+$Y=4;
+echo "<table>";
+for($i=0; $i<=$Y-1; $i++){
+    echo "<tr>";
+    for($j=1; $j<=$Y; $j++){
+		$C=$Y-$i;    
+    	if($C==4){
+        	echo "<td>O</td>";          	
+        }else{
+        	echo "<td>X</td>";         	
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=$Y-1; $i++){
+    echo "<tr>";
+    for($j=0; $j<=$Y-1; $j++){
+		$C=$Y-$j;    
+    	if($C==4){
+        	echo "<td>O</td>";      	
+        }else{
+        	echo "<td>X</td>";   	
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=sizeof($P)-1; $i++){
+	$B=$P[$i];
+    echo "<tr>";
+    for($j=0; $j<=sizeof($P)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$H[$j]=$H[$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=max($H)-1; $i++){
+		if($i<sizeof($H)){
+    	$F=$H[$i];
+        }else{
+        	$F=0;
+        }
+        echo "<tr>";
+        for($j=0; $j<=max($H)-1; $j++){
+        	$T=$F-$j;
+            if($T>0){
+            echo "<td>O</td>";
+            }else{
+            echo "<td>X</td>";
+            }
+        
+        }
+         echo "</tr>";
+    }
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=sizeof($Q)-1; $i++){
+	$B=$Q[$i];
+    echo "<tr>";
+    for($j=0; $j<=sizeof($Q)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$G[$j]=$G[$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=max($G)-1; $i++){
+		if($i<sizeof($G)){
+    	$F=$G[$i];
+        }else{
+        	$F=0;
+        }
+        echo "<tr>";
+        for($j=0; $j<=max($G)-1; $j++){
+        	$T=$F-$j;
+            if($T>0){
+            echo "<td>O</td>";
+            }else{
+            echo "<td>X</td>";
+            }
+        
+        }
+         echo "</tr>";
+    }
+echo "</table>";
+?>
+</body>
+</html>
