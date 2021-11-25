@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$A=array(2,3,2,1);
+$S=array();
+echo "<table>";
+for($i=0; $i<=sizeof($A)-1; $i++){
+	$B=$A[$i];
+    echo "<tr>";
+    for($j=0; $j<=sizeof($A)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$S[$i][$j]=$S[$i][$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=sizeof($A)-1; $i++){
+echo "<tr>";
+	for($j=0; $j<=sizeof($A)-1; $j++){
+		if($S[$j][$i]==1){
+        echo "<td>O</td>";
+        }else{
+        	echo "<td>X</td>";
+        }
+	}
+    echo "</tr>";
+}
+echo "</table>";
+$X=array(3,5,3);
+$Y=array();
+echo "<table>";
+for($i=0; $i<=max($X)-1; $i++){
+	$B=$X[$i];
+    echo "<tr>";
+    for($j=0; $j<=max($X)-1; $j++){
+		$C=$B-$j;    
+    	if($C>0){
+        	echo "<td>O</td>";
+           	$Y[$i][$j]=$Y[$i][$j]+1;
+        }else{
+        	echo "<td>X</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+echo "<table>";
+for($i=0; $i<=max($X)-1; $i++){
+echo "<tr>";
+	for($j=0; $j<=max($X)-1; $j++){
+		if($Y[$j][$i]==1){
+        echo "<td>O</td>";
+        }else{
+        	echo "<td>X</td>";
+        }
+	}
+    echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>
