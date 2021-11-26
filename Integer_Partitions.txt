@@ -25,8 +25,8 @@ for($i=0; $i<=sizeof($A)-1; $i++){
 	$B=$A[$i];
     echo "<tr>";
     for($j=0; $j<=sizeof($A)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$S[$j]=$S[$j]+1;
         }else{
@@ -61,8 +61,8 @@ echo "<table>";
 for($i=0; $i<=$Y-1; $i++){
     echo "<tr>";
     for($j=1; $j<=$Y; $j++){
-		$C=$Y-$i;    
-    	if($C==4){
+		$F=$Y-$i;    
+    	if($F==4){
         	echo "<td>O</td>";          	
         }else{
         	echo "<td>X</td>";         	
@@ -75,8 +75,8 @@ echo "<table>";
 for($i=0; $i<=$Y-1; $i++){
     echo "<tr>";
     for($j=0; $j<=$Y-1; $j++){
-		$C=$Y-$j;    
-    	if($C==4){
+		$F=$Y-$j;    
+    	if($F==4){
         	echo "<td>O</td>";      	
         }else{
         	echo "<td>X</td>";   	
@@ -90,8 +90,8 @@ for($i=0; $i<=sizeof($P)-1; $i++){
 	$B=$P[$i];
     echo "<tr>";
     for($j=0; $j<=sizeof($P)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$H[$j]=$H[$j]+1;
         }else{
@@ -126,8 +126,8 @@ for($i=0; $i<=sizeof($Q)-1; $i++){
 	$B=$Q[$i];
     echo "<tr>";
     for($j=0; $j<=sizeof($Q)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$G[$j]=$G[$j]+1;
         }else{
@@ -164,8 +164,8 @@ for($i=0; $i<=max($X)-1; $i++){
 	$B=$X[$i];
     echo "<tr>";
     for($j=0; $j<=max($X)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$Y[$j]=$Y[$j]+1;
         }else{
