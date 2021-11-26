@@ -21,8 +21,8 @@ for($i=0; $i<=sizeof($A)-1; $i++){
 	$B=$A[$i];
     echo "<tr>";
     for($j=0; $j<=sizeof($A)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$S[$i][$j]=$S[$i][$j]+1;
         }else{
@@ -52,8 +52,8 @@ for($i=0; $i<=max($X)-1; $i++){
 	$B=$X[$i];
     echo "<tr>";
     for($j=0; $j<=max($X)-1; $j++){
-		$C=$B-$j;    
-    	if($C>0){
+		$F=$B-$j;    
+    	if($F>0){
         	echo "<td>O</td>";
            	$Y[$i][$j]=$Y[$i][$j]+1;
         }else{
