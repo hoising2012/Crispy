@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$Sum="";
+for($i=1; $i<=99; $i++){
+ $j=$i+2;
+    $n=$i-1;
+    $x=pow(-1,$n)/($i*$j);
+ $Sum=$Sum+$x;
+}
+$Y=1/$Sum;
+$Y=round($Y);
+echo "The sum of series S[n]: ";
+echo $Sum;
+echo "<br \>";
+echo "Here we approach number ";
+echo $Y;
+echo " in place.";
+echo "<br \>";
+$Summation="";
+$X=1/$Y;
+do{
+	$A=$X;
+	$Summation=$Summation+$A;
+    $B=(1/2)*$A;
+    $X=$B;
+}while($Summation<0.5);
+echo "Let E[n] be another series with input 4(t), ";
+echo "Here we approach ";
+echo $Summation;
+echo " in place.";
+?>
+</body>
+</html>
