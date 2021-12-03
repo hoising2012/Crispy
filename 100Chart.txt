@@ -14,8 +14,6 @@ th, td {
 </head>
 <body>
 <?php
-$S=array(1,2,3,4,5,
-		 6,7,8,9,10);
          $O=10;
          echo "<table>";
 echo "<tr>";
@@ -32,8 +30,8 @@ echo "<th>J</th>";
 echo "</tr>";
          for($i=0; $i<=9; $i++){
          	echo "<tr>";
-            for($j=0; $j<=9; $j++){
-         		$B=$S[$j]+$i*$O;	
+            for($j=1; $j<=10; $j++){
+         		$B=$j+$i*$O;	
          		echo "<td>$B</td>";  
          	}
              echo "</tr>";
