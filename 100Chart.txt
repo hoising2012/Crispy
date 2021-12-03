@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$S=array(1,2,3,4,5,
+		 6,7,8,9,10);
+         $O=10;
+         echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "<th>D</th>";
+echo "<th>E</th>";
+echo "<th>F</th>";
+echo "<th>G</th>";
+echo "<th>H</th>";
+echo "<th>I</th>";
+echo "<th>J</th>";
+echo "</tr>";
+         for($i=0; $i<=9; $i++){
+         	echo "<tr>";
+            for($j=0; $j<=9; $j++){
+         		$B=$S[$j]+$i*$O;	
+         		echo "<td>$B</td>";  
+         	}
+             echo "</tr>";
+         }
+echo "</table>";
+?>
+</body>
+</html>
