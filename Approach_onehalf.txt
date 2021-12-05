@@ -27,13 +27,13 @@ do{
     $X=$B;
 }while($Summation<0.5);
 echo "Let E[n] be another series with input 4(t), ";
-echo "Here we approach ";
+echo "here we approach ";
 echo $Summation;
 echo " in place.";
 echo "<br \>";
 $P=1/(1-$Summation);
 echo "Let P be the geometric series of r=0.5, ";
-echo "Hence P=".$P.".";
+echo "hence P=".$P.".";
 ?>
 </body>
 </html>
