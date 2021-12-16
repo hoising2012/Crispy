@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$E=sqrt(5);
+echo "<table>";
+echo "<tr>";
+echo "<th>A</th>";
+echo "<th>B</th>";
+echo "<th>C</th>";
+echo "</tr>";
+for($i=1; $i<=8; $i++){
+	$x=$E*$i;
+    $d=$E*(1/15)*$x;
+    $d1=$E*(1/20)*$x;
+    $d2=$E*(1/12)*$x;
+    $A=$d+$d2;
+    $j=$i/4;
+    $s=is_decimal($j);
+    if($s==0){
+	echo "<tr>";
+    echo "<td>$i</td>";
+    echo "<td>$d1</td>";
+    echo "<td>$A</td>";
+	echo "</tr>";
+    }
+}
+echo "</table>";
+echo "From this table, we can conclude: ";
+echo "<br \>";
+echo "A-B=C";
+function is_decimal( $val )
+{
+    return is_numeric( $val ) && floor( $val ) != $val;
+}
+?>
+</body>
+</html>
