@@ -46,7 +46,7 @@ echo "<tr>";
 }
 echo "</table>";
 $X=array(3,5,3);
-$Y=array();
+$Y=array(array());
 echo "<table>";
 for($i=0; $i<=max($X)-1; $i++){
 	$B=$X[$i];
