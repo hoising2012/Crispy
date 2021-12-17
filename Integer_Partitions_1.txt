@@ -15,7 +15,7 @@ th, td {
 <body>
 <?php
 $A=array(2,3,1,2);
-$S=array();
+$S=array(array());
 echo "<table>";
 for($i=0; $i<=sizeof($A)-1; $i++){
 	$B=$A[$i];
