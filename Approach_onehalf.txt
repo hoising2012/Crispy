@@ -26,7 +26,7 @@ do{
     $B=(1/2)*$A;
     $X=$B;
 }while($Summation<0.5);
-echo "Let E[n] be another series with input 4(t), ";
+echo "Let F[n] be another series with input 4(t), ";
 echo "here we approach ";
 echo $Summation;
 echo " in place.";
