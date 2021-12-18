@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$gamma="";
+for($i=2; $i<=99; $i++){
+	$j=101-$i;
+    if($i==2){
+	$k=sqrt(1+$j);
+    }else{
+    	$gamma=sqrt(1+$j*$k);
+		$k=$gamma;	    
+    }	
+}
+echo "The greek alphabet gamma has a numerals value of ".$gamma.".";
+?>
+</body>
+</html>
