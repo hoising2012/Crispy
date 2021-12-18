@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$n=0;
+$I="";
+do{
+	$s=3*$n+1;
+    $I=$I+2*pow($s,3);
+	$n++;
+}while($I<2);
+echo "The greek alphabet beta has a numerals value of ".$I.".";
+?>
+</body>
+</html>
