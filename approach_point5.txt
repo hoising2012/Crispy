@@ -12,14 +12,14 @@ for($x=0; $x<=$one; $x++){
     $integral=$integral+$rect;
 }
 $integral=round($integral,4);
-$ching=1/$integral;
-$ching=round($ching,1);
+$F=1/$integral;
+$F=round($F,1);
 $integral_xs=1-$integral;
 echo "Integrate x square: ".$integral_xs;
 echo "<br \>";
 echo "Integrate square root of x: ".$integral;
 echo "<br \>";
-echo "Here we approach: ".$ching;
+echo "Here we approach: ".$F;
 ?>
 </body>
 </html>
