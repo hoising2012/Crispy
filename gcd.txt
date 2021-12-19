@@ -9,11 +9,11 @@ $P="";
 $Q="";
 do{
 	$C=floor($A/$B);
-    $D=$A-($C*$B);
+    $F=$A-($C*$B);
 	$A=$B;
-    $B=$D;
+    $B=$F;
     $n++;
-}while($D>0);
+}while($F>0);
 for($i=1; $i<=$n; $i++){
 	$P=floor($A/$B);
 	$Q=$A-$Q*$B;	
