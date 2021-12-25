@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$x = 9;
+$i = 1;
+$A=1;
+echo "The factors of the " . $x . " are: ";
+while ($i <= $x) {
+    if ($x % $i == 0) {
+        echo $i . " ";
+        $flag=primeCheck($i);
+        if($flag==1){
+        	$a=1-1/$i;
+        	$A=$A*$a;
+        }
+    }
+    ++$i;
+}
+echo "<br \>";
+echo "Phi of ".$x." is: ".($A*$x);
+echo "<br \>";
+$y=$x-1;
+$str;
+echo "The corresponding reduced residue system modulo 9 is {";
+for($i=1; $i<=$y; $i++){
+	$g=gcd($i,$x);
+    if($g==1){
+    	$str.=$i;
+    	$str.=", ";
+    }
+}
+$str=rtrim($str,", ");
+echo $str;
+echo "}";
+function primeCheck($number){
+    if ($number == 1)
+    return 0;
+    for ($i = 2; $i <= $number/2; $i++){
+        if ($number % $i == 0)
+            return 0;
+    }
+    return 1;
+}
+function gcd($B, $A){
+$n=0;
+$P="";
+$Q="";
+do{
+	$C=floor($A/$B);
+    $F=$A-($C*$B);
+	$A=$B;
+    $B=$F;
+    $n++;
+}while($F>0);
+for($i=1; $i<=$n; $i++){
+	$P=floor($A/$B);
+	$Q=$A-$Q*$B;	
+}
+return $Q;
+}
+?>
+</body>
+</html>
