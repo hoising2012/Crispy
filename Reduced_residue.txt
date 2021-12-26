@@ -23,10 +23,10 @@ echo "<br \>";
 $y=$x-1;
 $str;
 echo "The corresponding reduced residue system modulo 9 is {";
-for($i=1; $i<=$y; $i++){
-	$g=gcd($i,$x);
+for($n=1; $n<=$y; $n++){
+	$g=gcd($n,$x);
     if($g==1){
-    	$str.=$i;
+    	$str.=$n;
     	$str.=", ";
     }
 }
