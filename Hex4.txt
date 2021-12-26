@@ -37,15 +37,17 @@ for($s=0; $s<=4; $s++){
         $m=$h*cos(($a/180)*M_PI);
         $g=$m/(2*cos(($sigma/180)*M_PI)+1);
         $L=2*$g;
+	$height=$x*cos(((45-$b)/180)*M_PI);
+        $Area_of_triangle=(1/2)*$s*$height;
         $Area_of_square=pow($h,2);
         if(($s==4)&&($e!=0)){
     	echo "<tr>";
         echo "<td>$x</td>";
         echo "<td>$y</td>";
         echo "<td>$h</td>";
+	echo "<td>$Area_of_triangle</td>";
         echo "<td>$m</td>";
         echo "<td>$g</td>";
-        echo "<td>$L</td>";
         echo "<td>$Area_of_square</td>";
 		echo "</tr>";
  		}   
