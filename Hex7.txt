@@ -36,7 +36,6 @@ for($s=0; $s<=7; $s++){
         $h=$s_1+$y;
         $m=$h*cos(($a/180)*M_PI);
         $g=$m/(2*cos(($sigma/180)*M_PI)+1);
-        $L=2*$g;
 	$height=$x*cos(((45-$b)/180)*M_PI);
         $Area_of_triangle=(1/2)*$s*$height;
         $Area_of_square=pow($h,2);
