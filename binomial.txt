@@ -4,10 +4,10 @@
 <?php
 $Adult=18;
 $middle_age=45;
-$V=$Adult/2;
-$U=sqrt(pow($V,2)-$middle_age);
-$X_1=$V-$U;
-$X_2=$V+$U;
+$f=$Adult/2;
+$g=sqrt(pow($f,2)-$middle_age);
+$X_1=$f-$g;
+$X_2=$f+$g;
 $side_2=$X_1-6;
 if($side_2 < 0){
  $Area=M_PI*pow($X_2,2)/4;
