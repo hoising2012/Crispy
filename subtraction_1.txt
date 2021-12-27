@@ -23,16 +23,16 @@ echo "<th>C</th>";
 echo "</tr>";
 for($i=1; $i<=8; $i++){
 	$x=$F*$i;
-    $d=$F*(1/15)*$x;
-    $d1=$F*(1/20)*$x;
-    $d2=$F*(1/12)*$x;
-    $A=$d+$d2;
+    $t=$F*(1/15)*$x;
+    $t1=$F*(1/20)*$x;
+    $t2=$F*(1/12)*$x;
+    $A=$t+$t2;
     $j=$i/4;
     $s=is_decimal($j);
     if($s==0){
 	echo "<tr>";
     echo "<td>$i</td>";
-    echo "<td>$d1</td>";
+    echo "<td>$t1</td>";
     echo "<td>$A</td>";
 	echo "</tr>";
     }
