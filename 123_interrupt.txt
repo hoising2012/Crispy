@@ -40,20 +40,20 @@ function interrupt(int $n, int $m){
     	case 1:
     	$p=$m/1;
         $q=floor($p);
-        $o=$p-$q;
-    	return $o;
+        $t=$p-$q;
+    	return $t;
     	break;
   case 2:
     $p=$m/2;
         $q=floor($p);
-        $o=2*($p-$q);
-    	return $o;
+        $t=2*($p-$q);
+    	return $t;
     	break;
   case 3:
     	$p=$m/3;
         $q=floor($p);
-        $o=3*($p-$q);
-    	return $o;
+        $t=3*($p-$q);
+    	return $t;
     	break;
   default:
     break;
