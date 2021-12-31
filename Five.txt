@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$epsilon="";
+for($n=1; $n<=60; $n++){
+	$p=2*$n+1;
+    $q=2*$n-1;    
+    $p=sqrt($p);
+    $q=sqrt($q);
+    $T=($p-$q)/2;
+	$epsilon=$epsilon+$T;	
+}
+echo "I donated ".$epsilon." hundred dollars to Unicef.";
+?>
+</body>
+</html>
