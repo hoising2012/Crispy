@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+</style>
+</head>
+<body>
+<?php
+$n=1;
+echo "<table>";
+echo "<tr>";
+echo "<th>Balancing number</th>";
+echo "<th>Load</th>";
+echo "<th>Balancer</th>";
+echo "</tr>";
+while($n < 205){
+	if($n!=1){
+	$p=left_balance($n-1);
+	$n++;
+    [$x, $y]=right_balance($n,$p);
+    	if($x==$p){
+    	echo "<tr>";
+        echo "<td>".($n-1)."</td>";
+    	echo "<td>$x</td>";
+    	echo "<td>$y</td>";
+    	echo "</tr>";
+    	}
+    }else{
+    echo "<tr>";
+    echo "<td>$n</td>";
+    echo "<td>0</td>";
+    echo "<td>0</td>";
+    echo "</tr>";
+    $n++;
+    }
+}
+echo "</table>";
+function left_balance($m){
+	$Sum="";
+    for($i=1; $i<=$m; $i++){
+    	$Sum=$Sum+$i;
+    	}
+	return $Sum;
+}
+function right_balance($a, $b){
+	$Sum;
+   	$i=$a;
+    $n=0;
+    do{
+    $Sum=$Sum+$i;
+    $i++;
+    $n++;
+    }while($Sum<$b);
+	return [$Sum, $n];
+}
+?>
+</body>
+</html>
