@@ -25,14 +25,11 @@ body{ background:#FFF; }
                       {"id":"13","x":80,"y":60,"w":20,"h":20,"bg":"red"},
                       {"id":"14","x":40,"y":80,"w":20,"h":20,"bg":"red"},
 					  {"id":"15","x":60,"y":80,"w":20,"h":20,"bg":"red"},
-                      {"id":"16","x":80,"y":80,"w":20,"h":20,"bg":"red"}
-                     
-					  
+                      {"id":"16","x":80,"y":80,"w":20,"h":20,"bg":"red"}				  
     ];
 function myFunction() {
   var n;
   n = document.getElementById("numb").value;
-  
   if(showA[n]==0 && showB[n]==0 && showC[n]==0){
 	showA[n]=fillblock(n);
   }else if(showA[n]==1 && showB[n]==0 && showC[n]==0){
@@ -49,16 +46,12 @@ function myFunction() {
   }else if(showA[n]==1 && showB[n]==1 && showC[n]==0){
 	showA[n]=fillblock(n);
 	showB[n]=0;
-  }
-  
-  
-  
+  } 
 }
 function fillblock(n){
 	var ctx = document.getElementById('my_canvas').getContext('2d');
 	 for(var i = 0; i < buildings.length; i++){
         var b = buildings[i];
-	
 		if (b.id == n && showA[n]==0 && showB[n]==0 && showC[n]==0){
         ctx.fillStyle = "blue";
 		ctx.fillRect(b.x,b.y,b.w,b.h);
@@ -83,13 +76,11 @@ function fillblock(n){
 		ctx.fillStyle = "red";
 		ctx.fillRect(b.x,b.y,b.w,b.h);
 		return 0;
-		}
-		
+		}	
     }
 }
 function initCanvas(){
     var ctx = document.getElementById('my_canvas').getContext('2d');
- 
     for(var i = 0; i < buildings.length; i++){
         var b = buildings[i];
 		showA[i] = 0;
@@ -98,7 +89,6 @@ function initCanvas(){
         ctx.fillStyle = b.bg;
 		ctx.fillRect(b.x,b.y,b.w,b.h);
     }
-	
 }
 window.addEventListener('load', function(event) {
     initCanvas();
