@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.dot {
+.hex {
   height: 25px;
   width: 25px;
   background-color: #bbb;
@@ -17,13 +17,13 @@
 <?php
 echo "<div style=\"text-align:center\">";
 $bi_0=factorial(0);
-echo "<span class=\"dot\">$bi_0</span>";
+echo "<span class=\"hex\">$bi_0</span>";
 echo "</div>"; 
  for($i=1; $i<=8; $i++){
         echo "<div style=\"text-align:center\">";
         for($j=0; $j<=$i; $j++){
      $di=nCr($i, $j);
-         echo "<span class=\"dot\">$di</span>";
+         echo "<span class=\"hex\">$di</span>";
      }
         echo "</div>"; 
     }
